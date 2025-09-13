@@ -3,20 +3,7 @@
 function getScore(m_score1, m_score2) {
     let score = ''
     if (m_score1 === m_score2) {
-        switch (m_score1) {
-            case 0:
-                score = "Love-All";
-                break;
-            case 1:
-                score = "Fifteen-All";
-                break;
-            case 2:
-                score = "Thirty-All";
-                break;
-            default:
-                score = "Deuce";
-                break;
-        }
+        score = tryConvertToTennisScoreEquality(m_score1)
     } else if (m_score1 >= 4 || m_score2 >= 4) {
         if (m_score1 === m_score2 + 1) {score = "Advantage player1";}
         else if (m_score1 === m_score2 - 1) {score = "Advantage player2";}
@@ -26,6 +13,14 @@ function getScore(m_score1, m_score2) {
         score += tryConvertToTennisScore(m_score1) + '-' + tryConvertToTennisScore(m_score2);
     }
     return score;
+}
+
+function tryConvertToTennisScoreEquality(m_score){
+    if(m_score >= 3){
+        return "Deuce"
+    }else{
+        return tryConvertToTennisScore(m_score) + '-' + 'All'
+    }
 }
 
 function tryConvertToTennisScore(m_score){
