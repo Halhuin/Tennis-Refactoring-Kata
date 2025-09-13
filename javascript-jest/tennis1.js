@@ -1,7 +1,7 @@
 'use strict';
 
 function getScore(m_score1, m_score2) {
-    var score = "";
+    let score = ''
     var tempScore = 0;
     if (m_score1 === m_score2) {
         switch (m_score1) {
