@@ -2,7 +2,7 @@
 
 function getScore(m_score1, m_score2) {
     let score = ''
-    var tempScore = 0;
+    let tempScore = 0
     if (m_score1 === m_score2) {
         switch (m_score1) {
             case 0:
