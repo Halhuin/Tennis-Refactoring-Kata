@@ -18,10 +18,9 @@ function getScore(m_score1, m_score2) {
                 break;
         }
     } else if (m_score1 >= 4 || m_score2 >= 4) {
-        const minusResult = m_score1 - m_score2
-        if (minusResult === 1) {score = "Advantage player1";}
-        else if (minusResult === -1) {score = "Advantage player2";}
-        else if (minusResult >= 2) {score = "Win for player1";}
+        if (m_score1 === m_score2 + 1) {score = "Advantage player1";}
+        else if (m_score1 === m_score2 - 1) {score = "Advantage player2";}
+        else if (m_score1 >= m_score2 + 2) {score = "Win for player1";}
         else {score = "Win for player2";}
     } else {
         score += tryConvertToTennisScore(m_score1) + '-' + tryConvertToTennisScore(m_score2);
@@ -39,6 +38,8 @@ function tryConvertToTennisScore(m_score){
             return "Thirty";
         case 3:
             return "Forty";
+        default:
+            return "";
     }
 }
 
