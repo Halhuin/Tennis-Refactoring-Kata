@@ -16,11 +16,12 @@ function getScore(m_score1, m_score2) {
 }
 
 function tryConvertToTennisScoreEquality(m_score){
-    if(m_score >= 3){
-        return "Deuce"
-    }else{
-        return tryConvertToTennisScore(m_score) + '-' + 'All'
+    if (m_score >= 3) {
+        return 'Deuce'
     }
+
+    return tryConvertToTennisScore(m_score) + '-' + 'All'
+
 }
 
 function tryConvertToTennisScore(m_score){
