@@ -25,7 +25,7 @@ function getScore(m_score1, m_score2) {
         else if (minusResult >= 2) {score = "Win for player1";}
         else {score = "Win for player2";}
     } else {
-        for (var i = 1; i < 3; i++) {
+        for (let i = 1; i < 3; i++) {
             if (i === 1) {tempScore = m_score1;}
             else {
                 score += "-";
